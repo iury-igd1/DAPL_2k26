@@ -34,6 +34,9 @@ Rotas disponíveis:\n
 /jogo              -> 200 (OK) Abre a página do jogo\n\n
 Qualquer outra rota -> 404 (Not Found)\n`)
     } else if (req.url === '/informacoes') {
+        // Observação: na especificação HTTP, códigos 1xx são "provisórios": o normal é o servidor enviar um
+        // 1xx e, em seguida, uma resposta final (2xx, 4xx etc). Aqui ele é usado como resposta final só para
+        // fins didáticos, apenas para mostrar como o código aparece no navegador.
         res.statusCode = 102 // 102 Processing
         res.setHeader('Content-Type', 'text/plain; charset=utf-8')
         res.end(`- Página de informações -\n
@@ -94,7 +97,7 @@ O servidor está temporariamente indisponível.\n`)
     }
 })
 
-const port = 3003
+const port = 3005
 server.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}/`)
 })

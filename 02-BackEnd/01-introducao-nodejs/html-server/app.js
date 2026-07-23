@@ -16,7 +16,7 @@ const server = http.createServer((req, res) => {
             res.end('Erro ao ler o arquivo index.html\n')
         } else {
             res.statusCode = 200
-            res.setHeader('Content-Type', 'text/plain; charset=utf-8')
+            res.setHeader('Content-Type', 'text/html; charset=utf-8')
             res.end(data)
         }
     })

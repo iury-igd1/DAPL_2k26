@@ -1,10 +1,10 @@
 /*
 Exercício:
     
-    Desenvolva um servidor Node.js que recebe o nome, a idade e o e-mail de uma pessoa via queryURL e 
-    retorna a resposta correta em formato 'plain/text'.
-        - Interprete valor informado e diga se a pessoa é maior/menor de idade;
-        - Exiba uma mensagem de sucesso apenas se o e-mail for 'admin@etefmc.com.br'.
+    Desenvolva um servidor Node.js que recebe o nome, a idade e o e-mail de uma pessoa via queryURL e retorna 
+    a resposta correta em formato 'plain/text'.
+      - Interprete valor informado e diga se a pessoa é maior/menor de idade;
+      - Exiba uma mensagem de sucesso apenas se o e-mail for 'admin@etefmc.com.br'.
 */
 
 const http = require('http')
@@ -26,6 +26,9 @@ http://localhost:3007/hello?nome=Iury&idade=18&email=iury@empresa.com
         const email = urlParams.searchParams.get('email')
         res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' })
 
+        // A maioridade e a verificação de e-mail de admin são duas checagens independentes: o texto sobre
+        // maior/menor de idade sempre aparece, e a linha extra de "logado como admin" é anexada por cima
+        // sempre que o e-mail bater, não importa a idade informada
         if (idade >= 18) {
             if (email === 'admin@etefmc.com.br') {
                 res.end(`Olá, ${nome}, você tem ${idade} anos e É maior de idade!\n

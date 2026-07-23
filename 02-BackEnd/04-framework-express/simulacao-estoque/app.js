@@ -20,7 +20,7 @@ const app = express()
 
 app.use(express.json())
 
-var estoque = []
+var estoque = [] // Todo o conteúdo é perdido quando o servidor é reiniciado
 
 app.post('/estoque', (req, res) => {
     const produto = {
@@ -64,5 +64,5 @@ app.get('/estoque', (req, res) => {
     }
 })
 
-const port = 3011
+const port = 3010
 app.listen(port, () => console.log(`Servidor da Padaria rodando em http://localhost:${port}`))

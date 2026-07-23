@@ -2,8 +2,8 @@
     Canvas - parte 1
 
     Exercício: 
-        10 quadrados + 10 retas + 30 círculos, todos com posição, velocidade e cor aleatórias a cada vez 
-        que a página recarrega. Os objetos devem colidir nas bordas do Canvas.
+        10 quadrados + 10 retas + 30 círculos, todos com posição, velocidade e cor aleatórias a cada vez que a 
+        página recarrega. Os objetos devem colidir nas bordas do Canvas.
         Código formatado utilizando a extensão 'Prettier'.
 */
 

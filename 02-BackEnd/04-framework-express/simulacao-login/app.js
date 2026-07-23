@@ -20,6 +20,9 @@ app.use(express.json())
 
 const usuario_correto = 'iurynho'
 const senha_correta = 'iury1234'
+// Observação: "logado" é uma variável global, compartilhada por TODOS os clientes que acessam o servidor.
+// Não existe uma sessão por usuário. Na prática, assim que UM cliente faz login com sucesso, o servidor
+// considera "logado" para QUALQUER outra pessoa que acessar "/" em seguida.
 var logado = false
 
 app.get('/', (req, res) => {
@@ -46,7 +49,7 @@ app.post('/login', (req, res) => {
 app.post('/idade', (req, res) => {
     res.json({
         msg: 'Ano de nascimento recebido.',
-        idade: 2026 - req.body.ano_nascimento,
+        idade: 2026 - req.body.ano_nascimento, // O ano atual está fixo em 2026
     })
 })
 
@@ -56,5 +59,5 @@ app.post('/idade', (req, res) => {
     dados não são criptografados.
 */
 
-const port = 3010
+const port = 3011
 app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}/`))

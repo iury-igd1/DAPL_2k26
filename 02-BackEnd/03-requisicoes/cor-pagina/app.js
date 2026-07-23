@@ -20,6 +20,8 @@ Digite a cor desejada para a página no seguinte formato:\n
 http://localhost:3008/cores?cor=blue
 `)
     } else if (endpoint === '/cores') {
+        // Lê o valor do parâmetro "cor" da query string (o trecho depois do "?" na URL, ex: ?cor=blue),
+        // e usa esse valor para decidir qual arquivo HTML enviar de volta
         const cor = urlParams.searchParams.get('cor')
 
         if (cor === 'red') {

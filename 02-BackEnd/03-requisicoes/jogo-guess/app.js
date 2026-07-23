@@ -15,6 +15,8 @@ Exercício:
 const http = require('http')
 const fs = require('fs')
 
+// Observação: "numeroSecreto" e "tentativas" são variáveis globais, compartilhadas por TODOS os clientes
+// conectados ao servidor. Não existe uma partida por jogador.
 var numeroSecreto = 0
 var tentativas = 0
 
@@ -65,6 +67,7 @@ const server = http.createServer((req, res) => {
                         res.setHeader('Content-Type', 'text/plain; charset=utf-8')
                         res.end("Falha interna. Erro ao ler o arquivo 'jogo.html'.\n")
                     } else {
+                        // Se o palpite for maior que o número secreto, a dica é que o número é MENOR
                         const dica = palpite > numeroSecreto ? 'MENOR' : 'MAIOR'
                         const textoDica = `O número secreto é ${dica} que ${palpite}. Restam ${tentativas} tentativa(s)!`
                         const paginaComDica = data.replace('{{MENSAGEM}}', textoDica)

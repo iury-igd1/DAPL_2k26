@@ -10,6 +10,8 @@ const http = require('http')
 const fs = require('fs')
 
 const server = http.createServer((req, res) => {
+    // Cada "else if" segue o mesmo padrão: associa uma URL a um arquivo específico e responde com o Content-Type
+    // adequado ao tipo de conteúdo (text/html para páginas, image/jpeg para as imagens)
     if (req.url === '/') {
         fs.readFile('menu.html', (err, data) => {
             if (err) {

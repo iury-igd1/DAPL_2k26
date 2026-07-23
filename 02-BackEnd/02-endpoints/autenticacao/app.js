@@ -58,7 +58,7 @@ Rotas válidas:
     }
 })
 
-const port = 3005
+const port = 3003
 server.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}/`)
 })
