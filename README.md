@@ -1,17 +1,27 @@
 <div align="center">
 
-# 💻 DAPL_2k26_WEB
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:5B21B6,100:5B21B6&height=200&section=header&text=DAPL_2k26_WEB&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=32&desc=Desenvolvimento%20de%20Aplicativos%20•%20ETE%20FMC%20•%202026&descAlignY=54"/>
 
-### Exercícios da disciplina de Desenvolvimento de Aplicativos — ETE FMC
+### Projetos e exercícios desenvolvidos na disciplina de **Desenvolvimento de Aplicativos (DAPL)**
 
-<br/>
+<p>
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
-![Status](https://img.shields.io/badge/status-em%20andamento-yellow?style=for-the-badge)
+
+</p>
+
+<p>
+
+![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow?style=flat-square)
+![Projetos](https://img.shields.io/badge/Projetos-15-success?style=flat-square)
+![Tecnologias](https://img.shields.io/badge/Tecnologias-5-blue?style=flat-square)
+![Ano](https://img.shields.io/badge/Ano-2026-purple?style=flat-square)
+
+</p>
 
 </div>
 
@@ -19,160 +29,147 @@
 
 ## 👨‍💻 Sobre o repositório
 
-Este repositório reúne os exercícios práticos da disciplina de **Desenvolvimento de Aplicativos (DAPL)**, na sua trilha de **desenvolvimento Web**. O conteúdo é dividido em duas frentes que se complementam:
+> Este repositório reúne os projetos, exemplos e exercícios desenvolvidos durante a disciplina de **Desenvolvimento de Aplicativos (DAPL)**.
+>
+> O objetivo é praticar o desenvolvimento de aplicações Web, desde páginas estáticas em **HTML/CSS**, passando por **JavaScript**, até a criação de servidores utilizando **Node.js** e **Express**.
 
-- **FrontEnd** — páginas estáticas em HTML/CSS e animações/jogos interativos com `<canvas>` e JavaScript puro.
-- **BackEnd** — servidores HTTP em Node.js, evoluindo do módulo nativo `http` até o framework **Express**, cobrindo rotas, códigos de status, query strings, formulários e JSON.
-
-|                    |                                                                   |
-| ------------------ | ----------------------------------------------------------------- |
-| 🏫 **Instituição** | Escola Técnica de Eletrônica Francisco Moreira da Costa (ETE FMC) |
-| 🎓 **Curso**       | Técnico em Desenvolvimento de Sistemas (DS)                       |
-| 📘 **Disciplina**  | Desenvolvimento de Aplicativos (DAPL) — módulo Web                |
-| 👨‍🏫 **Professor**   | Daniel Albino Mosca Rodrigues                                     |
-| 🙋 **Aluno**       | Iury Gonçalves de Souza                                           |
-| 📅 **Ano letivo**  | 2026                                                              |
+| 🏷️ Informação   | 📄 Descrição                                                      |
+| :-------------- | :---------------------------------------------------------------- |
+| **Instituição** | Escola Técnica de Eletrônica Francisco Moreira da Costa (ETE FMC) |
+| **Curso**       | Técnico em Desenvolvimento de Sistemas (DS)                       |
+| **Disciplina**  | Desenvolvimento de Aplicativos (DAPL)                             |
+| **Professor**   | Daniel Albino Mosca Rodrigues                                     |
+| **Aluno**       | Iury Gonçalves de Souza                                           |
+| **Ano letivo**  | 2026                                                              |
 
 ---
 
 ## 🗃️ Estrutura do repositório
 
+> Os conteúdos estão organizados em módulos de **Front-end** e **Back-end**, acompanhando a evolução da disciplina.
+
 ```text
 DAPL_2k26_WEB/
-├── FrontEnd/
-│   ├── pagina-circuito.html
-│   ├── wikipedia-etefmc.html
-│   ├── img/
-│   └── canvas/
-│       ├── parte-1/                    # formas e movimento aleatório
-│       ├── parte-2/                    # pausa, retomada e controle de velocidade
-│       ├── jogo-cobrinha/              # jogo da cobrinha
-│       ├── chuva-particulas/           # partículas seguindo o mouse
-│       └── arena-gravitacional/        # arena com gravidade, 1 ou 2 jogadores
 │
-├── BackEnd/
-│   ├── 1-introducao-nodejs/
-│   │   ├── hello-world/                # módulo http nativo
-│   │   └── html-server/
-│   ├── 2-endpoints/
-│   │   ├── autenticacao/               # 401 vs 403
-│   │   ├── cardapio/
-│   │   ├── http-status/                # 1xx a 5xx
-│   │   └── mini-blog/
-│   ├── 3-requisicoes/
-│   │   ├── cor-pagina/                 # query string
-│   │   ├── jogo-guess/
-│   │   └── query-basico/
-│   └── 4-framework-express/
-│       ├── simulacao-estoque/          # POST/GET com Express + JSON
-│       └── simulacao-login/
+├── 01-FrontEnd/
+│   ├── páginas HTML
+│   ├── Canvas API
+│   ├── imagens
+│   └── exercícios de JavaScript
 │
-├── package.json
+├── 02-BackEnd/
+│   ├── Introdução ao Node.js
+│   ├── Endpoints HTTP
+│   ├── Requisições
+│   ├── Express
+│   └── aplicações práticas
+│
 └── README.md
 ```
 
 ---
 
-## 🎨 FrontEnd
+## 📖 Conteúdo desenvolvido
 
-### Páginas estáticas
+| 📚 Módulo | 📖 Conteúdo       | ⭐ Destaques                  |
+| :-------: | ----------------- | ----------------------------- |
+|    01     | HTML5             | Estrutura de páginas          |
+|    02     | CSS3              | Estilização                   |
+|    03     | JavaScript        | Manipulação da página         |
+|    04     | Canvas API        | Jogos e animações             |
+|    05     | Node.js           | Primeiro servidor             |
+|    06     | Endpoints HTTP    | Rotas e respostas             |
+|    07     | Requisições       | Query strings e parâmetros    |
+|    08     | Express           | Framework para aplicações Web |
+|    09     | Projetos práticos | Login, Blog, Estoque, Jogos   |
 
-| Arquivo                 | Descrição                                                                                                          |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `pagina-circuito.html`  | Página explicativa sobre o circuito "Quem foi o primeiro?", com lista de componentes, imagem e link de referência. |
-| `wikipedia-etefmc.html` | Página no estilo de artigo da Wikipedia sobre a ETE FMC, construída com HTML puro.                                 |
+<div align="center">
 
-### Exercícios em Canvas
+### 📊 Estatísticas do projeto
 
-| Pasta                         | Descrição                                                                          |
-| ----------------------------- | ---------------------------------------------------------------------------------- |
-| `canvas/parte-1/`             | Animação com quadrados, retas e círculos com posição, velocidade e cor aleatórias. |
-| `canvas/parte-2/`             | Dois quadrados animados, com botão de pausa/retomar e controle de velocidade.      |
-| `canvas/jogo-cobrinha/`       | Jogo clássico da cobrinha, com pontuação e reinício.                               |
-| `canvas/chuva-particulas/`    | Efeito visual de partículas seguindo o cursor do mouse.                            |
-| `canvas/arena-gravitacional/` | Jogo de arena com gravidade, bombas e modos para 1 ou 2 jogadores.                 |
+| 📂 Módulos | 🚀 Tecnologias | 💻 Projetos |
+| :--------: | :------------: | :---------: |
+|   **2**    |     **5**      |   **15+**   |
 
----
-
-## 🌐 BackEnd
-
-| Módulo                | Exercício           | Porta | Descrição                                                                  |
-| --------------------- | ------------------- | :---: | -------------------------------------------------------------------------- |
-| `1-introducao-nodejs` | `hello-world`       | 3001  | Servidor HTTP mais básico possível, sem dependências.                      |
-| `1-introducao-nodejs` | `html-server`       | 3002  | Servidor que lê e entrega uma página HTML completa (o Jogo Canvas).        |
-| `2-endpoints`         | `http-status`       | 3003  | Demonstra códigos HTTP de cada categoria (1xx a 5xx) e um 404 customizado. |
-| `2-endpoints`         | `cardapio`          | 3004  | Rotas fixas para o cardápio de cada dia da semana.                         |
-| `2-endpoints`         | `autenticacao`      | 3005  | Diferença prática entre `401 Unauthorized` e `403 Forbidden`.              |
-| `2-endpoints`         | `mini-blog`         | 3006  | Mini blog com menu, posts e imagens servidos como arquivos estáticos.      |
-| `3-requisicoes`       | `query-basico`      | 3007  | Leitura de nome, idade e e-mail via query string.                          |
-| `3-requisicoes`       | `cor-pagina`        | 3008  | Muda a cor de fundo da página conforme o parâmetro `?cor=`.                |
-| `3-requisicoes`       | `jogo-guess`        | 3009  | Jogo de adivinhação de número entre servidor e cliente.                    |
-| `4-framework-express` | `simulacao-login`   | 3010  | Simulação de login/logout com Express, recebendo dados via JSON.           |
-| `4-framework-express` | `simulacao-estoque` | 3011  | CRUD simples de estoque (POST cadastra, GET consulta por ID).              |
-
-> Os módulos `1-introducao-nodejs`, `2-endpoints` e `3-requisicoes` usam **apenas módulos nativos** do Node.js (`http`, `fs`, `url`). Só o módulo `4-framework-express` depende do pacote **Express**.
+</div>
 
 ---
 
 ## ▶️ Como executar
 
-### FrontEnd
+### Front-end
 
-Basta abrir o arquivo `.html` desejado diretamente no navegador (não é necessário servidor).
+Abra qualquer arquivo `.html` em seu navegador.
 
-### BackEnd — módulos 1, 2 e 3 (Node.js puro)
+ou utilize a extensão **Live Server** do VS Code.
 
-Não têm dependências externas, então basta rodar diretamente:
+---
+
+### Back-end
+
+Entre na pasta desejada:
 
 ```bash
-cd BackEnd/1-introducao-nodejs/hello-world
-node app.js
+cd 02-BackEnd/04-framework-express
 ```
 
-> ⚠️ Vários servidores usam caminhos relativos com `fs.readFile()` (ex: `'index.html'`). Por isso, **sempre rode o comando de dentro da pasta do próprio exercício**, e não da raiz do repositório.
-
-### BackEnd — módulo 4 (Express)
-
-Este módulo tem uma dependência externa (`express`), então é necessário instalar antes de rodar:
+Instale as dependências:
 
 ```bash
-cd BackEnd/4-framework-express
 npm install
-cd simulacao-estoque
+```
+
+Execute:
+
+```bash
 node app.js
 ```
 
-Para testar as rotas `POST`, use um cliente HTTP como **Postman**, **Insomnia** ou a extensão **Thunder Client**, enviando um corpo JSON. Exemplo para `simulacao-estoque`:
+ou
 
-```json
-{
-    "id": 12,
-    "nome": "Pão de sal",
-    "preco": 0.5,
-    "quantidade": 55
-}
+```bash
+npm start
 ```
 
 ---
 
 ## 📌 Competências desenvolvidas
 
-- 🌐 Fundamentos de servidores HTTP e do módulo nativo `http` do Node.js
-- 🚦 Códigos de status HTTP e o significado de cada categoria (1xx–5xx)
-- 🔗 Rotas, query strings e leitura de corpo de requisição (JSON)
-- ⚙️ Framework **Express**: middlewares, `req`/`res`, rotas `GET`/`POST`
-- 🎨 Manipulação da API **Canvas** (formas, animação, detecção de colisão, teclado)
-- 🗃️ Leitura e escrita de arquivos com o módulo `fs`
-- 🐛 Leitura crítica de código: identificação de bugs e limitações de design
+> Ao longo da disciplina foram desenvolvidas competências fundamentais para a construção de aplicações Web modernas.
+
+- 🌐 HTML5
+- 🎨 CSS3
+- ⚙️ JavaScript
+- 🖥️ Canvas API
+- 🚀 Node.js
+- 📡 Servidores HTTP
+- 🔗 Endpoints
+- 📦 Express
+- 📂 Organização de projetos
+- 🌿 Versionamento com Git e GitHub
 
 ---
 
 ## 👤 Autor
 
-Projeto acadêmico desenvolvido por **Iury Gonçalves de Souza**, no curso Técnico em Desenvolvimento de Sistemas da **ETE FMC**.
+Projeto acadêmico desenvolvido por **Iury Gonçalves de Souza** durante o curso Técnico em Desenvolvimento de Sistemas da **ETE FMC**.
 
-<p>
-  <a href="https://github.com/iury-igd1">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
-  </a>
+<p align="center">
+
+<a href="https://github.com/iury-igd1">
+<img src="https://img.shields.io/badge/GitHub-iury--igd1-181717?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+
 </p>
+
+---
+
+<div align="center">
+
+### ⭐ Obrigado por visitar este repositório!
+
+<sub>Desenvolvido para fins acadêmicos • ETE FMC • 2026</sub>
+
+</div>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:5B21B6,100:5B21B6&height=120&section=footer"/>
