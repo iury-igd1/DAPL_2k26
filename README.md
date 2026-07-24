@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=slice&color=0:5B21B6,100:5B21B6&height=180&section=header&text=DAPL_2k26&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=24&desc=Desenvolvimento%20de%20Aplicativos%20•%20ETE%20FMC%20•%202026&descAlignY=44"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:5B21B6,100:5B21B6&height=180&section=header&text=DAPL_2k26&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=24&desc=Desenvolvimento%20de%20Aplicativos%20•%20ETE%20FMC%20•%202026&descAlignY=44"/>
 
 <p>
 
@@ -97,15 +97,10 @@ Entre na pasta desejada:
 cd 02-BackEnd/04-framework-express
 ```
 
-Instale as dependências:
+Instale as dependências e, depois, execute:
 
 ```bash
 npm install
-```
-
-Execute:
-
-```bash
 node app.js
 ```
 
