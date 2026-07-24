@@ -1,8 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:5B21B6,100:5B21B6&height=200&section=header&text=DAPL_2k26_WEB&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=32&desc=Desenvolvimento%20de%20Aplicativos%20•%20ETE%20FMC%20•%202026&descAlignY=54"/>
-
-### Projetos e exercícios desenvolvidos na disciplina de **Desenvolvimento de Aplicativos (DAPL)**
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:5B21B6,100:5B21B6&height=200&section=header&text=DAPL_2k26&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=28&desc=Desenvolvimento%20de%20Aplicativos%20•%20ETE%20FMC%20•%202026&descAlignY=50"/>
 
 <p>
 
@@ -29,9 +27,8 @@
 
 ## 👨‍💻 Sobre o repositório
 
-> Este repositório reúne os projetos, exemplos e exercícios desenvolvidos durante a disciplina de **Desenvolvimento de Aplicativos (DAPL)**.
->
-> O objetivo é praticar o desenvolvimento de aplicações Web, desde páginas estáticas em **HTML/CSS**, passando por **JavaScript**, até a criação de servidores utilizando **Node.js** e **Express**.
+Este repositório reúne os projetos, exemplos e exercícios desenvolvidos durante a disciplina de **Desenvolvimento de Aplicativos (DAPL)**.  
+O objetivo é praticar o desenvolvimento de aplicações Web, desde páginas estáticas em **HTML/CSS**, passando por **JavaScript**, até a criação de servidores utilizando **Node.js** e **Express**.
 
 | 🏷️ Informação   | 📄 Descrição                                                      |
 | :-------------- | :---------------------------------------------------------------- |
@@ -46,30 +43,31 @@
 
 ## 🗃️ Estrutura do repositório
 
-> Os conteúdos estão organizados em módulos de **Front-end** e **Back-end**, acompanhando a evolução da disciplina.
+Os conteúdos estão organizados em módulos de **Front-end** e **Back-end**, acompanhando a evolução da disciplina.
 
 ```text
-DAPL_2k26_WEB/
+DAPL_2k26/
 │
 ├── 01-FrontEnd/
-│   ├── páginas HTML
+│   ├── HTML
+│   ├── CSS
+│   ├── JavaScript
 │   ├── Canvas API
-│   ├── imagens
-│   └── exercícios de JavaScript
+│   └── Imagens
 │
 ├── 02-BackEnd/
-│   ├── Introdução ao Node.js
+│   ├── Node.js
 │   ├── Endpoints HTTP
 │   ├── Requisições
 │   ├── Express
-│   └── aplicações práticas
+│   └── Projetos
 │
 └── README.md
 ```
 
 ---
 
-## 📖 Conteúdo desenvolvido
+## 📚 Conteúdo da disciplina
 
 | 📚 Módulo | 📖 Conteúdo       | ⭐ Destaques                  |
 | :-------: | ----------------- | ----------------------------- |
@@ -97,15 +95,11 @@ DAPL_2k26_WEB/
 
 ## ▶️ Como executar
 
-### Front-end
+### 🌐 Front-end
 
-Abra qualquer arquivo `.html` em seu navegador.
+Abra qualquer arquivo `.html` em seu navegador ou utilize a extensão **Live Server** do VS Code.
 
-ou utilize a extensão **Live Server** do VS Code.
-
----
-
-### Back-end
+### ⚙️ Back-end
 
 Entre na pasta desejada:
 
@@ -125,28 +119,22 @@ Execute:
 node app.js
 ```
 
-ou
-
-```bash
-npm start
-```
-
 ---
 
 ## 📌 Competências desenvolvidas
 
-> Ao longo da disciplina foram desenvolvidas competências fundamentais para a construção de aplicações Web modernas.
+Ao longo da disciplina foram desenvolvidas competências fundamentais para a construção de aplicações Web modernas.
 
 - 🌐 HTML5
 - 🎨 CSS3
 - ⚙️ JavaScript
 - 🖥️ Canvas API
-- 🚀 Node.js
-- 📡 Servidores HTTP
-- 🔗 Endpoints
-- 📦 Express
+- 🟢 Node.js
+- 🚀 Express
+- 📡 Endpoints HTTP
+- 🔗 Requisições
 - 📂 Organização de projetos
-- 🌿 Versionamento com Git e GitHub
+- 🌿 Git e GitHub
 
 ---
 
