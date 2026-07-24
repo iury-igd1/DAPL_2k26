@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:5B21B6,100:5B21B6&height=200&section=header&text=DAPL_2k26&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=28&desc=Desenvolvimento%20de%20Aplicativos%20•%20ETE%20FMC%20•%202026&descAlignY=50"/>
+<img src="https://capsule-render.vercel.app/api?type=slice&color=0:5B21B6,100:5B21B6&height=180&section=header&text=DAPL_2k26&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=24&desc=Desenvolvimento%20de%20Aplicativos%20•%20ETE%20FMC%20•%202026&descAlignY=44"/>
 
 <p>
 
@@ -80,16 +80,6 @@ DAPL_2k26/
 |    07     | Requisições       | Query strings e parâmetros    |
 |    08     | Express           | Framework para aplicações Web |
 |    09     | Projetos práticos | Login, Blog, Estoque, Jogos   |
-
-<div align="center">
-
-### 📊 Estatísticas do projeto
-
-| 📂 Módulos | 🚀 Tecnologias | 💻 Projetos |
-| :--------: | :------------: | :---------: |
-|   **2**    |     **5**      |   **15+**   |
-
-</div>
 
 ---
 
