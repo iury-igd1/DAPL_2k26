@@ -27,17 +27,17 @@
 
 ## 👨‍💻 Sobre o repositório
 
-Este repositório reúne os projetos, exemplos e exercícios desenvolvidos durante a disciplina de **Desenvolvimento de Aplicativos (DAPL)**.  
+Este repositório reúne os projetos, exemplos e exercícios desenvolvidos durante a disciplina de **Desenvolvimento de Aplicativos (DAPL)**.
+
 O objetivo é praticar o desenvolvimento de aplicações Web, desde páginas estáticas em **HTML/CSS**, passando por **JavaScript**, até a criação de servidores utilizando **Node.js** e **Express**.
 
-| 🏷️ Informação   | 📄 Descrição                                                      |
-| :-------------- | :---------------------------------------------------------------- |
-| **Instituição** | Escola Técnica de Eletrônica Francisco Moreira da Costa (ETE FMC) |
-| **Curso**       | Técnico em Desenvolvimento de Sistemas (DS)                       |
-| **Disciplina**  | Desenvolvimento de Aplicativos (DAPL)                             |
-| **Professor**   | Daniel Albino Mosca Rodrigues                                     |
-| **Aluno**       | Iury Gonçalves de Souza                                           |
-| **Ano letivo**  | 2026                                                              |
+| 🏷️ Informação      | 📄 Descrição                                                      |
+| :----------------- | :---------------------------------------------------------------- |
+| 🏫 **Instituição** | Escola Técnica de Eletrônica Francisco Moreira da Costa (ETE FMC) |
+| 🎓 **Curso**       | Técnico em Desenvolvimento de Sistemas (DS)                       |
+| 📘 **Disciplina**  | Desenvolvimento de Aplicativos (DAPL) — 2026                      |
+| 👨‍🏫 **Professor**   | Daniel Albino Mosca Rodrigues                                     |
+| 👨‍🎓 **Aluno**       | Iury Gonçalves de Souza                                           |
 
 ---
 
@@ -49,14 +49,14 @@ Os conteúdos estão organizados em módulos de **Front-end** e **Back-end**, ac
 DAPL_2k26/
 │
 ├── 01-FrontEnd/
-│   ├── HTML
-│   ├── CSS
-│   ├── JavaScript
-│   ├── Canvas API
+│   ├── HTML                  # estrutura das páginas
+│   ├── CSS                   # estilização
+│   ├── JavaScript            # lógica da aplicação
+│   ├── Canvas API            # jogos e animações
 │   └── Imagens
 │
 ├── 02-BackEnd/
-│   ├── Node.js
+│   ├── Node.js               # introdução
 │   ├── Endpoints HTTP
 │   ├── Requisições
 │   ├── Express
@@ -67,19 +67,19 @@ DAPL_2k26/
 
 ---
 
-## 📚 Conteúdo da disciplina
+## 📖 Conteúdo das aulas
 
-| 📚 Módulo | 📖 Conteúdo       | ⭐ Destaques                  |
-| :-------: | ----------------- | ----------------------------- |
-|    01     | HTML5             | Estrutura de páginas          |
-|    02     | CSS3              | Estilização                   |
-|    03     | JavaScript        | Manipulação da página         |
-|    04     | Canvas API        | Jogos e animações             |
-|    05     | Node.js           | Primeiro servidor             |
-|    06     | Endpoints HTTP    | Rotas e respostas             |
-|    07     | Requisições       | Query strings e parâmetros    |
-|    08     | Express           | Framework para aplicações Web |
-|    09     | Projetos práticos | Login, Blog, Estoque, Jogos   |
+| Módulo | 📖 Conteúdo           | ⭐ Destaques                  |
+| :----: | --------------------- | ----------------------------- |
+|   01   | HTML5                 | Estrutura de páginas          |
+|   02   | CSS3                  | Estilização                   |
+|   03   | JavaScript            | Manipulação da página         |
+|   04   | Canvas API            | Jogos e animações             |
+|   05   | Node.js               | Primeiro servidor             |
+|   06   | Endpoints HTTP        | Rotas e respostas             |
+|   07   | Requisições           | Query strings e parâmetros    |
+|   08   | Express               | Framework para aplicações Web |
+|   09   | Projetos práticos Web | Login, Blog, Estoque, Jogos   |
 
 ---
 
@@ -91,16 +91,14 @@ Abra qualquer arquivo `.html` em seu navegador ou utilize a extensão **Live Ser
 
 ### ⚙️ Back-end
 
-Entre na pasta desejada:
+Entre na pasta desejada, instale as dependências e, depois, execute:
 
 ```bash
-cd 02-BackEnd/04-framework-express
-```
+cd 02-BackEnd/04-framework-express/simulacao-login
 
-Instale as dependências e, depois, execute:
+npm init -y
+npm install express
 
-```bash
-npm install
 node app.js
 ```
 
@@ -115,9 +113,9 @@ Ao longo da disciplina foram desenvolvidas competências fundamentais para a con
 - ⚙️ JavaScript
 - 🖥️ Canvas API
 - 🟢 Node.js
+- 📡 Servidores HTTP
 - 🚀 Express
-- 📡 Endpoints HTTP
-- 🔗 Requisições
+- 🔗 APIs e requisições
 - 📂 Organização de projetos
 - 🌿 Git e GitHub
 
