@@ -26,7 +26,7 @@ var TAMANHO_RETA = 120
 var RAIO_MIN = 10
 var RAIO_MAX = 80
 
-// Sorteia um numero entre min e max
+// Sorteia um número entre min e max
 function sortear(min, max) {
     return Math.random() * (max - min) + min
 }
@@ -55,12 +55,17 @@ for (var i = 0; i < QTD_QUADRADOS; i++) {
 // Cada reta tem um ponto inicial (x, y) e um ângulo fixo que define para onde a ponta final da linha aponta
 var retas = []
 for (var i = 0; i < QTD_RETAS; i++) {
+    var angulo = Math.random() * Math.PI * 2
+    var deslocamentoX = Math.cos(angulo) * TAMANHO_RETA
+    var deslocamentoY = Math.sin(angulo) * TAMANHO_RETA
+
+    // Considera as duas extremidades para criar a reta dentro do Canvas
     retas.push({
-        x: sortear(0, canvas.width),
-        y: sortear(0, canvas.height),
+        x: sortear(Math.max(0, -deslocamentoX), canvas.width - Math.max(0, deslocamentoX)),
+        y: sortear(Math.max(0, -deslocamentoY), canvas.height - Math.max(0, deslocamentoY)),
         dx: sortear(-3, 3),
         dy: sortear(-3, 3),
-        angulo: sortear(0, Math.PI * 2),
+        angulo: angulo,
         cor: sortearCor(),
     })
 }

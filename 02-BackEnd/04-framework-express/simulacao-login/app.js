@@ -3,12 +3,12 @@ Exercício:
 
     Monte um exemplo de JSON para trafegar os dados de login de um usuário, junto com a opção de tornar o login 
     persistente (opção lembrar de mim).
-    Após isso, crie um servidor com Express que possua as rota de home, de login e de idade. Na rota de login, 
+    Após isso, crie um servidor com Express que possua as rotas de home, de login e de idade. Na rota de login, 
     simplesmente responda os dados enviados na requisição para usuario e senha. (envie o que receber de volta 
     na response). Na rota de idade, o servidor deve receber com método POST um ano no formato AAAA e informar a 
     idade da pessoa nascida neste ano.
 
-    Tudo deve ser inclído em um servidor completo, com um endpoint para login e um endpoint que retorna uma 
+    Tudo deve ser incluído em um servidor completo, com um endpoint para login e um endpoint que retorna uma 
     página “home” html. Importante: a página html só pode ser retornada se o login for bem sucedido.    
 */
 
@@ -54,7 +54,7 @@ app.post('/idade', (req, res) => {
 })
 
 /*
-É possível considerar a transmissão a senha via JSON "segura", já que faz isso de forma privada? Explique.
+É possível considerar a transmissão da senha via JSON "segura", já que faz isso de forma privada? Explique.
     Não, a transmissão não é segura apenas por utilizar JSON. Embora isso evite que a senha apareça na URL, os 
     dados não são criptografados.
 */

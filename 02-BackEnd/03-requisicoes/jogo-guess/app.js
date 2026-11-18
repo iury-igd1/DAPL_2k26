@@ -19,6 +19,7 @@ const fs = require('fs')
 // conectados ao servidor. Não existe uma partida por jogador.
 var numeroSecreto = 0
 var tentativas = 0
+var partidaAtiva = false
 
 const server = http.createServer((req, res) => {
     const urlParams = new URL(req.url, 'http://localhost:3009')
@@ -27,6 +28,7 @@ const server = http.createServer((req, res) => {
     if (endpoint === '/') {
         numeroSecreto = Math.floor(Math.random() * 101)
         tentativas = 5
+        partidaAtiva = true // Libera os palpites para a nova partida
 
         fs.readFile('jogo.html', 'utf8', (err, data) => {
             if (err) {
@@ -45,7 +47,16 @@ const server = http.createServer((req, res) => {
         const palpiteString = urlParams.searchParams.get('palpite')
         const palpite = parseInt(palpiteString, 10)
 
+        // Impede palpites antes do início ou depois do encerramento da partida
+        if (!partidaAtiva) {
+            res.statusCode = 400
+            res.setHeader('Content-Type', 'text/plain; charset=utf-8')
+            res.end('Acesse / para iniciar uma nova partida.')
+            return
+        }
+
         if (palpite === numeroSecreto) {
+            partidaAtiva = false
             fs.readFile('vitoria.html', (err, data) => {
                 if (err) {
                     res.statusCode = 500
@@ -78,6 +89,7 @@ const server = http.createServer((req, res) => {
                     }
                 })
             } else {
+                partidaAtiva = false
                 fs.readFile('derrota.html', (err, data) => {
                     if (err) {
                         res.statusCode = 500

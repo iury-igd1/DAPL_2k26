@@ -24,7 +24,7 @@ Rotas disponíveis:
 /dashboard  -> Retorna 401 (usuário não autenticado)
 /admin      -> Retorna 403 (usuário sem permissão)\n
 Digite uma dessas rotas na URL para testar cada situação.
-Exemplo: http://localhost:3005/login`)
+Exemplo: http://localhost:3003/login`)
     } else if (req.url === '/login') {
         // 200 OK: Simula um login que deu certo
         res.statusCode = 200

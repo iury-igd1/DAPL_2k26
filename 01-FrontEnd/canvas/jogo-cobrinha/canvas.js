@@ -97,7 +97,7 @@ document.addEventListener('keydown', function (event) {
     }
 })
 
-// Executa um "tick" do jogo: anda uma célula, verifica colisões e comida
+// Executa um movimento do jogo: anda uma célula, verifica colisões e comida
 function passo() {
     direcao = proximaDirecao
 
@@ -110,8 +110,14 @@ function passo() {
         return
     }
 
-    // Colisão com o próprio corpo
-    for (var i = 0; i < cobra.length; i++) {
+    // Verifica se a cobra vai comer neste movimento
+    var vaiComer = novaCabeca.x === comida.x && novaCabeca.y === comida.y
+
+    // Quando não come, a última célula da cauda será liberada
+    var limiteCorpo = vaiComer ? cobra.length : cobra.length - 1
+
+    // Verifica a colisão com as partes do corpo que continuarão ocupadas
+    for (var i = 0; i < limiteCorpo; i++) {
         if (cobra[i].x === novaCabeca.x && cobra[i].y === novaCabeca.y) {
             fimDeJogo()
             return
@@ -120,13 +126,13 @@ function passo() {
 
     cobra.unshift(novaCabeca) // Adiciona a nova cabeça na frente
 
-    if (novaCabeca.x === comida.x && novaCabeca.y === comida.y) {
+    if (vaiComer) {
         // Comeu a bolinha: cresce e gera comida nova
         pontos++
         atualizarPlacar()
         posicionarComida()
     } else {
-        cobra.pop() // Não cresceu: remove o último segmento do rabo
+        cobra.pop() // Não cresceu: remove o último segmento da cauda
     }
 
     desenhar()

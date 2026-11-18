@@ -1,7 +1,7 @@
 /*
 Exercício:
     
-    Desenolva um servidor Node.js que recebe como parâmetro o nome de uma cor ('red', 'green' ou 'blue') e muda 
+    Desenvolva um servidor Node.js que recebe como parâmetro o nome de uma cor ('red', 'green' ou 'blue') e muda 
     a cor de fundo da página exibida no navegador do cliente, de acordo com a cor informada.
 */
 
@@ -64,13 +64,13 @@ http://localhost:3008/cores?cor=blue
             res.statusCode = 404
             res.setHeader('Content-Type', 'text/plain; charset=utf-8')
             res.end(`- ERRO 404 -\n
-URL inválido.`)
+URL inválida.`)
         }
     } else {
         res.statusCode = 404
         res.setHeader('Content-Type', 'text/plain; charset=utf-8')
         res.end(`- ERRO 404 -\n
-URL inválido.`)
+URL inválida.`)
     }
 })
 

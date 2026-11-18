@@ -68,8 +68,8 @@ var listaBombas = []
 
 var frames = 0
 var tempoVivo = 0
-var tempoBomba = 0 // Tempo desde a última bomba
-var freq = 100 // Tempo entre as bombas
+var tempoBomba = 0 // Quantidade de quadros desde a última geração de bombas
+var freq = 100 // Intervalo entre gerações de bombas, medido em quadros
 
 var fimDeJogo = false
 var vencedor = ''
@@ -133,12 +133,12 @@ function animate() {
         var quantidade = Math.floor(Math.random() * 7) + 4 // Gera de 4 a 10 bombas
 
         for (var k = 0; k < quantidade; k++) {
-            var angulo = Math.random() * Math.PI * 2 // Gera um ângulo aleatório de 0 a 360 para a direção da bomba
+            var angulo = Math.random() * Math.PI * 2 // Gera um ângulo aleatório entre 0 e 2π radianos para a direção da bomba
             var velocidade = 4.5 + tempoVivo * 0.05 // Quanto mais tempo sobrevive, mais rápidas ficam as bombas
 
             listaBombas.push({
-                // Criar movimento
-                x: 394, // Spawna no centro
+                // Define a posição e a velocidade da nova bomba
+                x: 394, // Cria a bomba no centro da arena
                 y: 244,
                 vx: Math.cos(angulo) * velocidade, // Eixo horizontal
                 vy: Math.sin(angulo) * velocidade, // Eixo vertical
@@ -208,12 +208,14 @@ function animate() {
             ) {
                 fimDeJogo = true
                 vencedor = 'Player 2'
+                return
             }
 
             if (modo == 2) {
                 if (px2 + 25 > b.x && px2 < b.x + 12 && py2 + 25 > b.y && py2 < b.y + 12) {
                     fimDeJogo = true
                     vencedor = 'Player 1'
+                    return
                 }
             }
         }
@@ -236,6 +238,7 @@ function animate() {
         // Se tocar nas bordas, o outro jogador vence
         fimDeJogo = true
         vencedor = 'Player 2'
+        return
     }
 
     c.fillStyle = 'red'
@@ -256,6 +259,7 @@ function animate() {
         if (px2 <= 20 || px2 + 25 >= 780) {
             fimDeJogo = true
             vencedor = 'Player 1'
+            return
         }
 
         c.fillStyle = 'cyan'
