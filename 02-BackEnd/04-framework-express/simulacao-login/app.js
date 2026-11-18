@@ -18,8 +18,8 @@ const path = require('path')
 
 app.use(express.json())
 
-const usuario_correto = 'iurynho'
-const senha_correta = 'iury1234'
+const usuarioCorreto = 'iurynho'
+const senhaCorreta = 'iury1234'
 // Observação: "logado" é uma variável global, compartilhada por TODOS os clientes que acessam o servidor.
 // Não existe uma sessão por usuário. Na prática, assim que UM cliente faz login com sucesso, o servidor
 // considera "logado" para QUALQUER outra pessoa que acessar "/" em seguida.
@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
     }
 })
 app.post('/login', (req, res) => {
-    if (req.body.usuario == usuario_correto && req.body.senha == senha_correta) {
+    if (req.body.usuario == usuarioCorreto && req.body.senha == senhaCorreta) {
         logado = true
         res.json({
             msg: 'Login correto! Acesso liberado para a Home.',
@@ -49,7 +49,7 @@ app.post('/login', (req, res) => {
 app.post('/idade', (req, res) => {
     res.json({
         msg: 'Ano de nascimento recebido.',
-        idade: 2026 - req.body.ano_nascimento, // O ano atual está fixo em 2026
+        idade: 2026 - req.body.anoNascimento, // O ano atual está fixo em 2026
     })
 })
 

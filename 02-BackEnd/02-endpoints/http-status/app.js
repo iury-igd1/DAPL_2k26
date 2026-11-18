@@ -41,7 +41,7 @@ Qualquer outra rota -> 404 (Not Found)\n`)
     res.statusCode = 200
     res.setHeader('Content-Type', 'text/plain; charset=utf-8')
     res.end(`- Página de informações -\n
-Código HTTP atual: 102 (Processing)\n\n
+Código HTTP final: 200 (OK)\n\n
 Uma resposta provisória 102 foi enviada. Processamento concluído com status 200.\n`)
   } else if (req.url === '/contato') {
     res.statusCode = 200 // 200 OK

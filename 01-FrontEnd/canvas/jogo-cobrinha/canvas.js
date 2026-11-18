@@ -130,6 +130,14 @@ function passo() {
         // Comeu a bolinha: cresce e gera comida nova
         pontos++
         atualizarPlacar()
+
+        // Encerra a partida quando a cobra ocupa todo o tabuleiro
+        if (cobra.length === colunas * linhas) {
+            desenhar()
+            fimDeJogo(true)
+            return
+        }
+        
         posicionarComida()
     } else {
         cobra.pop() // Não cresceu: remove o último segmento da cauda
@@ -138,7 +146,7 @@ function passo() {
     desenhar()
 }
 
-function fimDeJogo() {
+function fimDeJogo(venceu) {
     jogoAcabou = true
     clearInterval(loopId)
 
@@ -148,7 +156,7 @@ function fimDeJogo() {
     c.fillStyle = 'white'
     c.font = 'bold 28px Arial'
     c.textAlign = 'center'
-    c.fillText('FIM DE JOGO', canvas.width / 2, canvas.height / 2 - 10)
+    c.fillText(venceu ? 'VOCÊ VENCEU!' : 'FIM DE JOGO', canvas.width / 2, canvas.height / 2 - 10)
 
     c.font = '16px Arial'
     c.fillText('Pressione qualquer tecla para jogar novamente', canvas.width / 2, canvas.height / 2 + 20)

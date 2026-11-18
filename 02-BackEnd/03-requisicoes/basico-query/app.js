@@ -2,7 +2,7 @@
 Exercício:
     
     Desenvolva um servidor Node.js que recebe o nome, a idade e o e-mail de uma pessoa via queryURL e retorna 
-    a resposta correta em formato 'text/plain/'.
+    a resposta correta em formato 'text/plain'.
       - Interprete valor informado e diga se a pessoa é maior/menor de idade;
       - Exiba uma mensagem de sucesso apenas se o e-mail for 'admin@etefmc.com.br'.
 */

@@ -2,22 +2,18 @@
     "name": "dapl_2k26_web",
     "version": "1.0.0",
     "description": "Exercícios e projetos da disciplina de Desenvolvimento de Aplicativos (DAPL) - módulo Web, do curso Técnico em Desenvolvimento de Sistemas.",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/iury-igd1/DAPL_2k26_WEB.git"
+        "url": "git+https://github.com/iury-igd1/DAPL_2k26.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "type": "commonjs",
     "bugs": {
-        "url": "https://github.com/iury-igd1/DAPL_2k26_WEB/issues"
+        "url": "https://github.com/iury-igd1/DAPL_2k26/issues"
     },
-    "homepage": "https://github.com/iury-igd1/DAPL_2k26_WEB#readme",
+    "homepage": "https://github.com/iury-igd1/DAPL_2k26#readme",
     "dependencies": {
         "express": "^5.2.1"
     }
