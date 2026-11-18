@@ -8,10 +8,24 @@
 */
 
 var canvas = document.querySelector('canvas')
-canvas.width = window.innerWidth
-canvas.height = window.innerHeight
-
 var c = canvas.getContext('2d')
+
+function ajustarTamanhoCanvas() {
+    var largura = Math.max(1, canvas.clientWidth)
+    var altura = Math.max(1, canvas.clientHeight)
+
+    if (canvas.width === largura && canvas.height === altura) {
+        return false
+    }
+
+    canvas.width = largura
+    canvas.height = altura
+
+    return true
+}
+
+// Define as dimensões antes de criar os objetos da animação.
+ajustarTamanhoCanvas()
 
 // Quantidades de cada objeto
 var QTD_QUADRADOS = 10
@@ -172,5 +186,40 @@ function animate() {
         c.stroke()
     }
 }
+
+function limitarPosicao(valor, minimo, maximo) {
+    return Math.max(minimo, Math.min(maximo, valor))
+}
+
+var observadorCanvas = new ResizeObserver(function () {
+    if (!ajustarTamanhoCanvas()) return
+
+    for (var i = 0; i < quadrados.length; i++) {
+        var q = quadrados[i]
+
+        q.x = limitarPosicao(q.x, 0, canvas.width - TAMANHO_QUADRADO)
+        q.y = limitarPosicao(q.y, 0, canvas.height - TAMANHO_QUADRADO)
+    }
+
+    for (var i = 0; i < retas.length; i++) {
+        var r = retas[i]
+        var deslocamentoX = Math.cos(r.angulo) * TAMANHO_RETA
+        var deslocamentoY = Math.sin(r.angulo) * TAMANHO_RETA
+
+        r.x = limitarPosicao(r.x, Math.max(0, -deslocamentoX), canvas.width - Math.max(0, deslocamentoX))
+
+        r.y = limitarPosicao(r.y, Math.max(0, -deslocamentoY), canvas.height - Math.max(0, deslocamentoY))
+    }
+
+    for (var i = 0; i < circulos.length; i++) {
+        var circulo = circulos[i]
+
+        circulo.x = limitarPosicao(circulo.x, circulo.raio, canvas.width - circulo.raio)
+
+        circulo.y = limitarPosicao(circulo.y, circulo.raio, canvas.height - circulo.raio)
+    }
+})
+
+observadorCanvas.observe(canvas)
 
 animate()

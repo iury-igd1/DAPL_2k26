@@ -7,10 +7,24 @@
 */
 
 var canvas = document.querySelector('canvas')
-canvas.width = window.innerWidth
-canvas.height = window.innerHeight
-
 var c = canvas.getContext('2d')
+
+function ajustarTamanhoCanvas() {
+    var largura = Math.max(1, canvas.clientWidth)
+    var altura = Math.max(1, canvas.clientHeight)
+
+    if (canvas.width === largura && canvas.height === altura) {
+        return false
+    }
+
+    canvas.width = largura
+    canvas.height = altura
+
+    return true
+}
+
+// Define as dimensões antes de criar os objetos da animação.
+ajustarTamanhoCanvas()
 
 // Posição atual do mouse na tela
 var mouse = {
@@ -86,5 +100,11 @@ function animate() {
         }
     }
 }
+
+var observadorCanvas = new ResizeObserver(function () {
+    ajustarTamanhoCanvas()
+})
+
+observadorCanvas.observe(canvas)
 
 animate()
