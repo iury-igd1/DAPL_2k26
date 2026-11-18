@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#392345">
+  <meta name="description" content="Caderno de Desenvolvimento de Aplicativos de Iury Gonçalves de Souza. Exercícios de HTML, Canvas, Node.js e Express na ETE FMC em 2026.">
+  <title>Caderno de aplicativos · DAPL 2026</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #faf8f3;
+      --ink: #2c2430;
+      --muted: #635869;
+      --plum: #392345;
+      --purple: #654079;
+      --line: #d9d1d9;
+      --mono: "IBM Plex Mono", Consolas, monospace;
+      --serif: "PT Serif", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      max-width: 1120px;
+      margin: auto;
+      padding: 0 clamp(18px, 4vw, 52px);
+      background: var(--paper);
+      color: var(--ink);
+      font: 1rem/1.45 "Source Sans 3", "Segoe UI", sans-serif;
+    }
+    a { color: var(--purple); text-underline-offset: .2em; }
+    a:hover { text-decoration: underline; }
+    :focus-visible { outline: 3px solid #ac5e09; outline-offset: 3px; }
+    [hidden] { display: none !important; }
+    .skip:not(:focus), .sr-only {
+      position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%);
+    }
+    header, nav, .brand, footer, .section-head, .tools, .server {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    header { min-height: 65px; }
+    .brand { color: var(--plum); font: bold 1.25rem var(--mono); letter-spacing: -.05em; }
+    .brand::before {
+      content: ""; width: 18px; height: 22px; background: #704884;
+      border-left: 4px solid var(--plum); border-radius: 1px 3px 3px 1px;
+      box-shadow: inset 0 -3px #bda2cb, inset 2px 0 #bda2cb;
+    }
+    .brand small { font: .81rem var(--mono); letter-spacing: 0; color: var(--muted); }
+    nav { gap: clamp(12px, 2.3vw, 28px); font-size: .87rem; }
+    nav a, footer a { color: var(--plum); text-decoration: none; }
+    .cover {
+      display: grid; grid-template-columns: 1.32fr 1fr;
+      background: var(--plum); color: #fff8f2;
+      border-left: 9px solid #291a33;
+      box-shadow: inset 2px 0 #7e6488, 0 3px 0 #cec3ce;
+    }
+    .cover-text { padding: clamp(20px, 3vw, 35px); align-self: center; }
+    .cover-text p { margin: 0; }
+    .course { font: .82rem/1.5 var(--mono); color: #e4cfe9; }
+    h1 { margin: 12px 0 17px; font: 500 clamp(2.65rem, 5vw, 4.2rem)/.95 var(--serif); letter-spacing: -.055em; }
+    h1 em { color: #e0bbef; font-weight: inherit; }
+    .author { font-size: .93rem; }
+    .plate {
+      display: grid; place-items: center; padding: 22px;
+      background: #51335e radial-gradient(#80628b 1px, transparent 1.2px) 0 0 / 12px 12px;
+    }
+    figure {
+      position: relative; width: min(100%, 285px); margin: 0; padding: 10px 10px 8px;
+      background: #f3ecd9; box-shadow: 3px 5px 0 #2c1b3580; transform: rotate(2deg);
+    }
+    figure::before {
+      content: ""; position: absolute; z-index: 1; width: 56px; height: 16px;
+      top: -7px; left: 40%; transform: rotate(-6deg); background: #deba7dd9;
+    }
+    .plate > a { display: block; width: min(100%, 285px); color: #3a2a3f; text-decoration: none; }
+    .plate > a:hover figcaption { text-decoration: underline; }
+    figure img { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
+    figcaption { margin-top: 7px; font: .76rem/1.4 var(--mono); }
+    .catalog { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(25px, 5vw, 62px); padding: 30px 0; }
+    .catalog section { min-width: 0; scroll-margin-top: 1rem; }
+    .section-head { align-items: baseline; border-bottom: 2px solid var(--plum); padding-bottom: 6px; }
+    h2 { margin: 0; font: 500 2rem/1.1 var(--serif); letter-spacing: -.045em; }
+    .count, .port, .module-count { font: .75rem var(--mono); color: var(--muted); }
+    .tools { justify-content: flex-start; flex-wrap: wrap; gap: 3px; margin: 10px 0 4px; }
+    button { cursor: pointer; font: inherit; }
+    .tools button, .copy {
+      background: transparent; color: var(--purple); border: 0; padding: 5px 9px; font-size: .84rem;
+    }
+    .tools button[aria-pressed="true"] { background: var(--plum); color: white; }
+    .tools button:hover, .copy:hover { text-decoration: underline; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    .exercise {
+      display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 10px;
+      border-bottom: 1px solid var(--line); padding: 8px 5px; text-decoration: none; color: var(--ink);
+    }
+    .exercise::after { content: "→"; grid-area: 1 / 2 / 3 / 3; color: var(--purple); }
+    .exercise:hover, summary:hover { background: #eee7f0; text-decoration: none; }
+    .exercise strong { font-weight: 600; }
+    .exercise small { color: var(--muted); font-size: .82rem; }
+    .intro { margin: 13px 0; color: var(--muted); font-size: .92rem; }
+    details { border-bottom: 1px solid var(--line); }
+    summary {
+      cursor: pointer; display: flex; align-items: center; gap: 10px;
+      padding: 13px 4px; list-style: none; font-weight: 600;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; width: 1em; text-align: center; color: var(--purple); }
+    details[open] > summary::after { content: "−"; }
+    .module-count { margin-left: auto; }
+    .server { flex-wrap: wrap; padding: 7px 6px; border-top: 1px dotted var(--line); }
+    .server a { margin-right: auto; }
+    .copy { border: 1px solid var(--line); }
+    .guide { margin-top: 18px; background: #eee6f1; border: 0; border-left: 3px solid #846191; }
+    .guide summary { padding: 10px 14px; color: var(--plum); justify-content: space-between; }
+    .guide-body { padding: 0 14px 12px; font-size: .88rem; }
+    .guide-body p { margin: 0 0 9px; }
+    code, pre { font-family: var(--mono); }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 9px; background: var(--paper); }
+    footer { align-items: baseline; flex-wrap: wrap; border-top: 1px solid var(--line); padding: 14px 0 24px; font-size: .8rem; color: var(--muted); }
+    @media (max-width: 720px) {
+      .catalog { grid-template-columns: 1fr; gap: 26px; }
+      .cover { grid-template-columns: 1.2fr 1fr; }
+    }
+    @media (max-width: 540px) {
+      header { min-height: 53px; flex-wrap: wrap; padding: 10px 0; gap: 6px 12px; }
+      nav { gap: 12px; font-size: .8rem; }
+      .cover { grid-template-columns: 1fr; }
+      .plate { padding: 18px 15px; }
+      .plate > a { width: 196px; }
+      figure { padding: 6px; }
+      .catalog { padding-top: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#navegador">Pular para os exercícios</a>
+  <header>
+    <span class="brand">DAPL <small>/ 2026</small></span>
+    <nav aria-label="Principal">
+      <a href="#navegador">Front-end</a>
+      <a href="#servidores">Back-end</a>
+      <a href="https://github.com/iury-igd1/DAPL_2k26">Repositório ↗</a>
+    </nav>
+  </header>
+  <main>
+    <div class="cover">
+      <div class="cover-text">
+        <p class="course">ETE FMC · Desenvolvimento de Aplicativos</p>
+        <h1>Caderno de<br><em>aplicativos</em></h1>
+        <p class="author">Iury Gonçalves de Souza</p>
+      </div>
+      <div class="plate">
+        <a href="01-FrontEnd/pagina-circuito.html">
+          <figure>
+            <img src="01-FrontEnd/img/circuito.jpg" width="789" height="361" alt="Protoboard com dois botões e dois LEDs">
+            <figcaption>Quem foi o primeiro? →</figcaption>
+          </figure>
+        </a>
+      </div>
+    </div>
+    <div class="catalog">
+      <section id="navegador" aria-labelledby="front-title">
+        <div class="section-head"><h2 id="front-title">No navegador</h2><span class="count">7 exercícios</span></div>
+        <div class="tools" role="group" aria-label="Filtrar exercícios" hidden>
+          <button type="button" aria-pressed="true">Todos</button>
+          <button type="button" aria-pressed="false">Páginas</button>
+          <button type="button" aria-pressed="false">Animações</button>
+          <button type="button" aria-pressed="false">Jogos</button>
+        </div>
+        <span class="sr-only" role="status" id="filter-status"></span>
+        <ul id="exercises">
+          <li data-category="Páginas">
+            <a class="exercise" href="01-FrontEnd/pagina-circuito.html"><strong>Quem foi o primeiro?</strong><small>Circuito com dois botões e LEDs</small></a>
+          </li>
+          <li data-category="Páginas">
+            <a class="exercise" href="01-FrontEnd/wikipedia-etefmc.html"><strong>ETE FMC em estilo Wikipédia</strong><small>História e localização da escola</small></a>
+          </li>
+          <li data-category="Animações">
+            <a class="exercise" href="01-FrontEnd/canvas/parte-1/index.html"><strong>Canvas, parte 1</strong><small>Formas em movimento e colisões</small></a>
+          </li>
+          <li data-category="Animações">
+            <a class="exercise" href="01-FrontEnd/canvas/parte-2/index.html"><strong>Canvas, parte 2</strong><small>Pausa e controle de velocidade</small></a>
+          </li>
+          <li data-category="Animações">
+            <a class="exercise" href="01-FrontEnd/canvas/chuva-particulas/index.html"><strong>Chuva de partículas</strong><small>Mova o mouse para criar partículas</small></a>
+          </li>
+          <li data-category="Jogos">
+            <a class="exercise" href="01-FrontEnd/canvas/jogo-cobrinha/index.html"><strong>Jogo da cobrinha</strong><small>Use as setas do teclado</small></a>
+          </li>
+          <li data-category="Jogos">
+            <a class="exercise" href="01-FrontEnd/canvas/arena-gravitacional/index.html"><strong>Arena Gravitacional</strong><small>Um ou dois jogadores no teclado</small></a>
+          </li>
+        </ul>
+      </section>
+      <section id="servidores" aria-labelledby="back-title">
+        <div class="section-head"><h2 id="back-title">No servidor</h2><span class="count">11 exercícios</span></div>
+        <p class="intro">Abra um módulo para ver o código e a porta de cada servidor. Os exercícios rodam na sua máquina com Node.js.</p>
+        <details>
+          <summary>Introdução ao Node.js<span class="module-count">2 exercícios</span></summary>
+          <ul>
+            <li class="server"><a href="https://github.com/iury-igd1/DAPL_2k26/tree/main/02-BackEnd/01-introducao-nodejs/hello-world">Hello World</a><span class="port">:3001</span></li>
+            <li class="server"><a href="https://github.com/iury-igd1/DAPL_2k26/tree/main/02-BackEnd/01-introducao-nodejs/html-server">Servidor HTML</a><span class="port">:3002</span></li>
+          </ul>
+        </details>
+        <details>
+          <summary>Endpoints<span class="module-count">4 exercícios</span></summary>
+          <ul>
+            <li class="server"><a href="https://github.com/iury-igd1/DAPL_2k26/tree/main/02-BackEnd/02-endpoints/autenticacao">Autenticação</a><span class="port">:3003</span></li>
+            <li class="server"><a href="https://github.com/iury-igd1/DAPL_2k26/tree/main/02-BackEnd/02-endpoints/cardapio">Cardápio</a><span class="port">:3004</span></li>
+            <li class="server"><a href="https://github.com/iury-igd1/DAPL_2k26/tree/main/02-BackEnd/02-endpoints/http-status">Status HTTP</a><span class="port">:3005</span></li>
+            <li class="server"><a href="https://github.com/iury-igd1/DAPL_2k26/tree/main/02-BackEnd/02-endpoints/mini-blog">Mini-blog</a><span class="port">:3006</span></li>
+          </ul>
+        </details>
+        <details>
+          <summary>Requisições<span class="module-count">3 exercícios</span></summary>
+          <ul>
+            <li class="server"><a href="https://github.com/iury-igd1/DAPL_2k26/tree/main/02-BackEnd/03-requisicoes/basico-query">Query string</a><span class="port">:3007</span></li>
+            <li class="server"><a href="https://github.com/iury-igd1/DAPL_2k26/tree/main/02-BackEnd/03-requisicoes/cor-pagina">Cor da página</a><span class="port">:3008</span></li>
+            <li class="server"><a href="https://github.com/iury-igd1/DAPL_2k26/tree/main/02-BackEnd/03-requisicoes/jogo-guess">Jogo de adivinhação</a><span class="port">:3009</span></li>
+          </ul>
+        </details>
+        <details>
+          <summary>Express<span class="module-count">2 exercícios</span></summary>
+          <ul>
+            <li class="server"><a href="https://github.com/iury-igd1/DAPL_2k26/tree/main/02-BackEnd/04-framework-express/simulacao-estoque">Simulação de estoque</a><span class="port">:3010</span></li>
+            <li class="server"><a href="https://github.com/iury-igd1/DAPL_2k26/tree/main/02-BackEnd/04-framework-express/simulacao-login">Simulação de login</a><span class="port">:3011</span></li>
+          </ul>
+        </details>
+        <details class="guide" id="execucao">
+          <summary>Como rodar na minha máquina?</summary>
+          <div class="guide-body">
+            <p>Com Git e Node.js instalados, baixe o repositório e entre na pasta do projeto.</p>
+            <pre><code>git clone https://github.com/iury-igd1/DAPL_2k26.git
+cd DAPL_2k26</code></pre>
+            <p>Na raiz do projeto, execute o comando do exercício escolhido. Para as duas simulações Express, instale as dependências uma vez antes de iniciar.</p>
+            <pre><code>npm install --prefix 02-BackEnd/04-framework-express</code></pre>
+            <p>Exemplo para o mini-blog</p>
+            <pre><code>cd 02-BackEnd/02-endpoints/mini-blog
+node app.js</code></pre>
+            <p>Abra <code>http://localhost:3006/</code> no navegador. Para encerrar, pressione <kbd>Ctrl</kbd> + <kbd>C</kbd>.</p>
+            <a href="https://github.com/iury-igd1/DAPL_2k26#execucao">Ver rotas e exemplos de requisições ↗</a>
+          </div>
+        </details>
+        <div class="intro" id="copy-status" role="status"></div>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <span>ETE FMC · Técnico em Desenvolvimento de Sistemas</span>
+    <a href="https://github.com/iury-igd1/DAPL_2k26#sobre">Sobre a disciplina ↗</a>
+  </footer>
+  <script>
+    const filters = document.querySelector('.tools');
+    const exercises = document.querySelectorAll('#exercises li');
+    filters.hidden = false;
+    filters.addEventListener('click', event => {
+      const selected = event.target.closest('button');
+      if (!selected) return;
+      const category = selected.textContent;
+      let count = 0;
+      for (const button of filters.querySelectorAll('button')) {
+        button.setAttribute('aria-pressed', String(button === selected));
+      }
+      for (const exercise of exercises) {
+        exercise.hidden = category !== 'Todos' && exercise.dataset.category !== category;
+        if (!exercise.hidden) count++;
+      }
+      document.querySelector('#filter-status').textContent = count + ' exercícios exibidos.';
+    });
+
+    for (const row of document.querySelectorAll('.server')) {
+      const link = row.querySelector('a');
+      const folder = new URL(link.href).pathname.split('/tree/main/')[1];
+      const command = 'cd ' + folder + '\nnode app.js';
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'copy';
+      button.textContent = 'Copiar comando';
+      button.setAttribute('aria-label', 'Copiar comando para ' + link.textContent);
+      button.addEventListener('click', async () => {
+        const status = document.querySelector('#copy-status');
+        try {
+          await navigator.clipboard.writeText(command);
+          status.textContent = 'Comando de ' + link.textContent + ' copiado. Execute na raiz do projeto.';
+        } catch {
+          status.replaceChildren('Execute na raiz do projeto:');
+          const block = document.createElement('pre');
+          block.textContent = command;
+          status.append(block);
+          status.scrollIntoView({ block: 'nearest' });
+        }
+      });
+      row.append(button);
+    }
+  </script>
+</body>
+</html>
