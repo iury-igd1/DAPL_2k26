@@ -73,8 +73,8 @@ Cada atividade pode ser explorada individualmente. Alguns exemplos do back-end r
 | :-------------------------- | :------------------------------------------------------ | :----------------------------------------------: |
 | **Página de circuito**      | Estrutura HTML, listas, imagens e links                 |    [Abrir](01-FrontEnd/pagina-circuito.html)     |
 | **Página estilo Wikipedia** | Organização de conteúdo e tabelas sobre a ETE FMC       |    [Abrir](01-FrontEnd/wikipedia-etefmc.html)    |
-| **Canvas — parte 1**        | Formas geométricas, movimento e colisões nas bordas     |       [Abrir](01-FrontEnd/canvas/parte-1/)       |
-| **Canvas — parte 2**        | Controle de velocidade e pausa da animação              |       [Abrir](01-FrontEnd/canvas/parte-2/)       |
+| **Canvas - parte 1**        | Formas geométricas, movimento e colisões nas bordas     |       [Abrir](01-FrontEnd/canvas/parte-1/)       |
+| **Canvas - parte 2**        | Controle de velocidade e pausa da animação              |       [Abrir](01-FrontEnd/canvas/parte-2/)       |
 | **Chuva de partículas**     | Eventos do mouse, gravidade e transparência             |  [Abrir](01-FrontEnd/canvas/chuva-particulas/)   |
 | **Jogo da cobrinha**        | Teclado, movimentação, pontuação e colisões             |    [Abrir](01-FrontEnd/canvas/jogo-cobrinha/)    |
 | **Arena Gravitacional**     | Modos para um ou dois jogadores, obstáculos e gravidade | [Abrir](01-FrontEnd/canvas/arena-gravitacional/) |
@@ -180,7 +180,7 @@ cd DAPL_2k26
 Os blocos abaixo consideram um terminal inicialmente aberto na **raiz do repositório**. Para experimentar outra atividade, retorne à raiz ou abra um novo terminal nessa pasta.
 
 <details open>
-<summary><strong>🌐 Front-end — abrir no navegador</strong></summary>
+<summary><strong>🌐 Front-end - abrir no navegador</strong></summary>
 
 <br>
 
@@ -196,8 +196,8 @@ Mantenha o arquivo `canvas.js` na mesma pasta do HTML, conforme a estrutura do r
 
 | Atividade               | Interação                                                               |
 | :---------------------- | :---------------------------------------------------------------------- |
-| **Canvas — parte 1**    | A animação começa ao abrir a página                                     |
-| **Canvas — parte 2**    | Botão para pausar ou retomar e controle deslizante de velocidade        |
+| **Canvas - parte 1**    | A animação começa ao abrir a página                                     |
+| **Canvas - parte 2**    | Botão para pausar ou retomar e controle deslizante de velocidade        |
 | **Chuva de partículas** | Mova o mouse sobre a página                                             |
 | **Jogo da cobrinha**    | Utilize as setas do teclado                                             |
 | **Arena Gravitacional** | Escolha o modo. Jogador 1 utiliza W/S e A/D, jogador 2 utiliza as setas |
@@ -209,7 +209,7 @@ Essas atividades não precisam de instalação de dependências com npm.
 <br>
 
 <details>
-<summary><strong>🟢 Node.js — executar os servidores nativos</strong></summary>
+<summary><strong>🟢 Node.js - executar os servidores nativos</strong></summary>
 
 <br>
 
@@ -232,7 +232,6 @@ Para executar outra atividade, entre na pasta correspondente, execute `node app.
 
 Não é necessário instalar Express para esses nove servidores.
 
-> [!NOTE]
 > Inicie o servidor de dentro da pasta da atividade. Alguns exemplos utilizam caminhos relativos para encontrar os arquivos HTML e as imagens.
 
 </details>
@@ -240,7 +239,7 @@ Não é necessário instalar Express para esses nove servidores.
 <br>
 
 <details>
-<summary><strong>🚀 Express — executar as simulações</strong></summary>
+<summary><strong>🚀 Express - executar as simulações</strong></summary>
 
 <br>
 
